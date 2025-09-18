@@ -9,20 +9,14 @@ def bresenham_line(x0, y0, x1, y1):
     err = 2 * dy - dx
     x, y = x0, y0
     points.append((x, y))
-
     while x != x1 or y != y1:
         if err >= 0:
-            #двигаемся по диагонали (x и y)
             y += sy
-            err -= 2 * dx  #e = e + 2*(dy - dx)
-
-        #всегда двигаемся по x
+            err -= 2 * dx
         x += sx
-        err += 2 * dy  #e = e + 2*dy
+        err += 2 * dy
         points.append((x, y))
-    return points
-
-
+    return pointsgit
 def draw_line(points, x0, y0, x1, y1):
     fig, ax = plt.subplots(figsize=(10, 8))
 
@@ -44,8 +38,6 @@ def draw_line(points, x0, y0, x1, y1):
     plt.ylabel('Y')
     plt.tight_layout()
     plt.show()
-
-
 def main():
     print("Алгоритм Брезенхема")
     print("=" * 40)
